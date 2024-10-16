@@ -1,0 +1,4 @@
+# jupyter -> no wheels for py 3.13
+black
+mypy
+flake8
