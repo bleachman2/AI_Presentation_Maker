@@ -2,3 +2,4 @@ jupyter
 python-dotenv
 openai
 pydantic
+python-pptx

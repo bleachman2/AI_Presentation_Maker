@@ -1,28 +1,23 @@
 usr_prompt = """
-[topic] = AI Tools for Developers
-[number] = 10
+[topic] = List of day to day AI Tools for Developers
+[number] = 8
 [target audience] = developers
-[Key point] = Talk about tools like copilot notebookLm otterAI, etc....
+[Key point 1] = Finish with a Q/A slide
+[Key point 2] = Have the second to Last slide be manual coding LLM integration
+[Key point 3] = Include search tools like perplexity, research tools like notebookLM, Transcription tools like Otter.ai
 """
 
 
 sys_prompt = """
-You are a professional analyst and presenter
-Create an outline for a PowerPoint presentation on [topic].
+Reset conversation
+You are a professional content presenter.
+Create a PowerPoint presentation on [topic].
 The presentation should be [number] slides long and aimed at [target audience].
 Include the following key points:
-
     [Key point 1]
     [Key point 2]
     [Key point 3]
-
-For each slide, provide:
-
-    A concise title
-    3-4 bullet points of content
-    Any relevant data or statistics to include
-    Suggestions for visuals or graphics
-
+    
 Please structure the presentation with an introduction, main content slides, and a conclusion.
 """
 
