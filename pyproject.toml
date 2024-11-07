@@ -1,0 +1,6 @@
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D101", #Docstrings
+    "T201" #Print
+    ]
