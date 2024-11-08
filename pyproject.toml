@@ -2,5 +2,6 @@
 select = ["ALL"]
 ignore = [
     "D101", #Docstrings
-    "T201" #Print
+    "T201", #Print
+    "D103" #Docstrings
     ]
