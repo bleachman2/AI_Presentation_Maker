@@ -1,43 +1,63 @@
 """File with LLM prompts to be used in notebook."""
 
 
-first_prompt = """
-#Task
-As an Expert AI developer, your task is to create a detailed outline for a PowerPoint presentation on the topic: "Practical Uses of AI on a Daily Basis for Developers".
+outline_prompt = """
+# Task:
 
-#Presentation Details
+Create a detailed outline for an 8-slide PowerPoint presentation titled "Practical Uses of AI on a Daily Basis for Developers".
 
-- Number of Slides: 8 slides.
-- Target Audience: Developers who are fairly knowledgeable about AI.
+# Presentation Details:
 
-# Content Requirements
+    Number of Slides: 8
+    Target Audience: Developers familiar with AI concepts
 
-- Include AI Tools: Incorporate tools like NotebookLM, OtterAI, Perplexity, and other relevant AI tools that developers can use in their daily work.
-- Additional Tools: Research and include other AI tools that fit the topic and are beneficial for developers.
-- Merge Similar Tools: Combine similar tools or topics into the same slides to streamline the presentation.
+# Content Requirements:
 
-# Structure and Formatting
+    - Introduction Slide:
+        - Include [Presenter Name] and [Presentation Topic].
 
-## Slide Format:
-- Slide Number: Indicate the slide number.
-- Slide Title: Provide a concise title for each slide.
-- Key Points: List bullet points highlighting the main content of each slide.
-- Description: Optionally, include a brief description or notes for clarification if necessary.
+    - AI Tools for Searching:
+        - Tools like Perplexity and ChatGPT Search
+
+    - AI Tools for Research:
+        - Tools like NotebookLM
+
+    - AI Tools for Transcriptions and Meetings:
+        - Tools like OtterAI
+
+    - AI Tools for Note-Taking:
+        - Tools like Notion AI and Obsidian with AI plugins
+
+    - Additional AI Tools:
+        - Research and include other relevant tools beneficial for developers
+        - Merge similar tools into the same slides to streamline content
+
+    - API and Automation Tools:
+        - Tools like OpenAI API
+        - Position this as the second-to-last slide
+
+    - Q/A Slide:
+        - Conclude with a slide for questions and answers
+
+# Slide Format
+
+For each slide, provide:
+
+    - Slide Title: A concise title
+    - Key Points: Bullet points highlighting main content
 
 # Additional Instructions
 
-- Focus on Practicality: Emphasize how AI tools can be practically applied by developers in their daily routines.
-- Benefits and Use Cases: Highlight the benefits, efficiencies, and specific use cases of each tool or category of tools.
-- Logical Flow: Ensure the presentation flows logically from introduction to conclusion.
-- Engaging Content: Aim for content that is engaging and informative for an audience already familiar with AI concepts.
-- Q/A Section: Finish the presentation with a Q/A slide
-- Introduction Slide: Start the presentation with an Introduction Slide that contains [Presenter Name] and [Presentation Topic]
+    - Focus on Practicality: Emphasize real-world applications for developers
+    - Benefits and Use Cases: Highlight efficiencies and specific examples
+    - Logical Flow: Ensure a coherent progression from start to finish
+    - Engaging Content: Craft informative content suited for an AI-savvy audience
 
-# Deliverable
+# Deliverable:
 
-Provide the PPT outline in a structured format, clearly listing each slide with its title, and bullet points.""" # noqa: E501
+Provide the PowerPoint outline in a structured format, listing each slide with its title and bullet points.""" # noqa: E501
 
-second_prompt = """
+PPT_prompt = """
 # Task
 
 Given a PowerPoint (PPT) outline, create detailed content for each slide.
@@ -53,7 +73,7 @@ For **each slide**, provide:
     - Expand on the key points provided in the outline.
     - Ensure the content is informative and engaging for an audience knowledgeable about AI.
     - Keep slide text concise to fit typical PPT slide formats.
-    - Format the text to not use bullet point markers and instead use line breaks
+    - Format the text to not use bullet point markers and instead use line breaks.
 
 - **Image Creation**:
     - Craft an image prompt that will produce a visual supporting the slide's theme.
@@ -97,5 +117,46 @@ Presented by: [Your Name]
 ---
 
 Use this format to provide content for each slide in the outline.
+
+""" # noqa: E501
+
+
+notes_prompt = """
+# Task
+
+Using the slide content and image prompts provided, create detailed presenter notes for each slide in the presentation.
+
+# Instructions
+
+- **Objective**: For each slide, write comprehensive presenter notes that will guide the speaker during the presentation.
+
+- **Presenter Notes Should Include**:
+    - An expansion of the slide's main points with additional details, explanations, and context.
+    - Engaging language to connect with an audience knowledgeable about AI and development.
+    - Examples, anecdotes, or insights that enhance the understanding of the topic.
+    - A logical flow that complements the slide content without simply reading the slide text verbatim.
+
+# Formatting Guidelines
+
+- Present the notes for each slide in the following format:
+
+# Slide {Number}: {Slide Title}
+
+## Presenter Notes
+[Your detailed presenter notes here.]
+
+
+# Example
+
+
+
+# Slide 1: Introduction
+
+## Presenter Notes
+
+Welcome to today's presentation on 'Practical Uses of AI on a Daily Basis for Developers.' My name is [Your Name], and I'm excited to share how AI is transforming our daily workflows as developers. We'll explore various AI tools that enhance productivity, streamline processes, and open up new possibilities in software development. By the end of this session, I hope you'll have a deeper understanding of how to leverage these tools in your own projects.
+
+
+Use this format to provide presenter notes for each slide, ensuring that the content is informative, engaging, and adds value beyond the text on the slides.
 
 """ # noqa: E501
